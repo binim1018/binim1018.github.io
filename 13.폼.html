@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>13.폼</title>
+</head>
+<body>
+    <h1>폼태그실습</h1>
+    <form action="데이터를 전송할 주소 입력" method="데이터 전달 방식 GET or POST">
+        <!-- input -->
+        <input type="text">텍스트입력(한줄)<br>
+        <input type="password" name="" id="">비밀번호입력<br>
+        <input type="checkbox">체크박스(다중선택)<br>
+        <input type="radio" name="" id="">라디오박스(단일선택)<br>
+        <input type="file">파일업로드시 선택창 띄우기<br>
+        <input type="button" value="일반버튼"><br>
+        <!-- value 항목 삭제하면 기본값 '초기화'로 나옴 -->
+        <input type="reset" value="reset"><br>
+        <!-- value 항목 삭제하면 기본값 '제출'로 나옴 -->
+        <input type="submit" value="보내기"><br>
+        <!-- input의 type이 button, reset, submit인 것과 동일함 -->
+        <!-- input으로 만든 버튼과의 차이점 : 버튼의 이름을 태그 사이에 작성 -->
+        <button type="button">일반버튼</button>
+        <button type="reset">리셋버튼</button>
+        <button type="submit">전송버튼</button>
+        <button><img src="img/bg-note.png" alt=""></button>
+
+        <!-- 보이진 않지만 서버에 전송은 됨. 주로 개발자들이 사용. -->
+        <input type="hidden" value="숨겨진값"><br>
+        <input type="image" src="img/bg-note.png" alt=""><br>
+
+        <input type="number" name="" id="" size="4" max="5" min="1"><br>
+        <!-- value값은 초기 상태 지정 -->
+        <input type="range" max="5" min="1" value="1"><br>
+        <input type="month" name="" id=""><br>
+        <input type="color" name="" id=""><br>
+        <!-- 브라우저마다 지원하지 않기도 해서 자주 쓰지 않음 -->
+        <input type="search" name="" id=""><br>
+        <!-- 백분율 막대그래프 -->
+        <progress value="40" max="100"></progress><br>
+
+        <select name="" id="">
+            <!-- value=넘겨지는값(노출은안됨) -->
+            <option value="1">첫번째</option>
+            <option value="2">두번째</option>
+            <option value="3">세번째</option>
+        </select>
+        <br>
+        <!-- 영역 크기를 사용자가 조절할 수 있으나 보통은 css로 고정해 놓음 -->
+        <textarea name="" id="" cols="30" rows="10"></textarea>
+        <br>
+
+        
+    </form>
+</body>
+</html>
