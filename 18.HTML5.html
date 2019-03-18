@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>18.HTML5</title>
+    <style>
+        /* css 문법 작성하는 곳 */
+        /* 
+        선택자 타이틀{속성:값;}
+         */
+        body{font-family: sans-serif;}
+        /* 
+        브라우저에 따라 폰트가 다르게 나오므로 기본폰트 지정
+        sans-serif : 고딕체
+         */
+        header, footer{padding: 10px; color: #fff; background: #000;}
+        nav ul{padding: 0;}
+        nav ul li{display: inline; list-style: none;}
+        nav ul li a{color: #000; text-decoration: none;}
+        section{margin: 5px; padding: 5px; background:lightgrey;}
+        article{margin: 5px; padding: 10px; background: #fff;}
+    </style>
+</head>
+<body>
+    <header>
+        <!-- h1 로고에 많이 사용 -->
+        <h1>카카오</h1>
+    </header>
+    
+    <!-- Header 안에 Menu 들어와도 됨 -->
+    <nav>
+        <!-- ul>li*3>a[href=#] -->
+        <!-- 주메뉴를 만들 때 많이 사용하는 구조 -->
+        <ul>
+            <li><a href="#">카카오톡</a></li>
+            <li><a href="#">카카오스토리</a></li>
+            <li><a href="#">카카오프렌즈</a></li>
+        </ul>
+    </nav>
+
+    <section>
+        <h2>카카오 서비스</h2>
+        <article>
+            <h3>카카오톡</h3>
+            <p>사람과 세상, 그 이상을 연결하는 카카오톡</p>
+        </article>
+        <article>
+            <h3>카카오스토리</h3>
+            <p>소소한 일상 속 소소한 이야기, 카카오스토리</p>
+        </article>
+        <article>
+            <h3>카카오프렌즈</h3>
+            <p>일상 속 즐거움, 카카오프렌즈</p>
+        </article>
+    </section>
+
+    <footer>
+        <p>Copyright &copy; Kakao Corp. All rights reserved.</p>
+    </footer>
+</body>
+</html>

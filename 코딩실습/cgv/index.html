@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>CGV</title>
+    <!-- 폰트 아이콘 사용하기 -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+    <!-- Top-banner -->
+    <aside id="cop-banner">
+        <div class="center">
+            <a href="#">
+                <img src="img/top_banner.jpg" alt="쥬만지 영화정보 바로가기">
+            </a>
+            <button>
+                <!-- 폰트아이콘:사용하고자하는 아이콘 검색해서 클래스 부여하기 -->
+                <i class="fas fa-times"></i>
+                <!-- 웹접근성:시각장애인들을 위해서 제공하는 내용
+                     스크린리더기가 읽어주지만 화면상(디자인)에 노출은 안 됨.
+                -->
+                <span class="blind">배너닫기</span>
+            </button>
+        </div>
+    </aside>
+    <!-- // Top-banner -->
+
+    <!-- Header -->
+    <header>
+        <div class="center">
+            <div class="sub-nav">
+                <a href="#">로그인</a>
+                <a href="#">회원가입</a>
+            </div>
+            <div class="gnb">
+                <h1><img src="img/cgv.png" alt="CGV"></h1>
+                <h2><img src="img/cultureplex.png" alt="cultureplex"></h2>
+                <nav>
+                    <!-- ul>li*4>a[href="#"] -->
+                    <ul>
+                        <li><a href="#">영화</a></li>
+                        <li><a href="#">예매</a></li>
+                        <li><a href="#">극장</a></li>
+                        <li><a href="#">이벤트&컬쳐</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <!-- 검색창 -->
+            <!-- form action="" 검색값 어디로 보내는지 -->
+            <form action="#" class="search"> 
+                <label for="search" class="blind">영화검색</label>
+                <input type="text" placeholder="영화제목을 입력하세요.">
+                <!-- form 태그 안의 button type은 기본이 submit임. -->
+                <button type="submit">검색</button>
+            </form>
+        </div>
+    </header>
+    <!-- // Header -->
+
+    <!-- section -->
+    <section>
+        <!-- 메인광고 -->
+        <article class="main-ad">
+            <h2 class="blind">메인광고</h2>
+            <div class="slide center">
+                <ul class="slide-image">
+                    <li class="on"><a href="#"><img src="img/slide1.jpg" alt="let's play at cgv"></a></li>
+                    <li><a href="#"><img src="img/slide2.jpg" alt="이달의 cgv"></a></li>
+                    <li><a href="#"><img src="img/slide3.jpg" alt="2018 cgv calender"></a></li>
+                </ul>
+                <!-- 불렛 -->
+                <ol>
+                    <li><a href="#" class="on"><span class="blind">1</span></a></li>
+                    <li><a href="#"><span class="blind">2</span></a></li>
+                    <li><a href="#"><span class="blind">3</span></a></li>
+                </ol>
+                <!-- 화살표 -->
+                <button class="prev">
+                    <i class="fas fa-chevron-left"></i>
+                    <span class="blind">이전</span>
+                </button>
+                <button class="next">
+                    <i class="fas fa-chevron-right"></i>
+                    <span class="blind">다음</span>
+                </button>
+            </div>
+        </article>
+
+        <!-- movie selection -->
+        <!-- class명은 띄어쓰기로 다수 이름 사용 가능 -->
+        <article class="movie-selection center">
+            <h2><img src="img/h3_movie_selection.gif" alt="movie selection"></h2>
+            <ul>
+                <li>
+                    <!-- 유튜브 영화영상 복사해서 넣기 -->
+                    <iframe width="1019" height="573" src="https://www.youtube.com/embed/PVP5ZJuI57c" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="img/banner5.jpg" alt="코코">
+                    </a>
+                </li>
+            </ul>
+        </article>
+
+        <!-- event -->
+        <article class="event center">
+            <h2><img src="img/h3_event.gif" alt="event"></h2>
+            <ul>
+                <li><a href="#"><img src="img/banner1.jpg" alt="이달의 cgv"></a></li>
+                <li><a href="#"><img src="img/banner2.jpg" alt="1318클럽 감동 어드벤처 시사회"></a></li>
+                <li><a href="#"><img src="img/banner3.jpg" alt="new year 기획상품 출시"></a></li>
+                <li><a href="#"><img src="img/banner4.jpg" alt="나를 바꾸는 글쓰기"></a></li>
+            </ul>
+        </article>
+    </section>
+    <!-- // section -->
+
+    <!-- Footer -->
+    <footer>
+        <div class="center">
+            <!-- ul>li*5>a[href=#] -->
+            <ul>
+                <li><a href="#">회사소개</a></li>
+                <li><a href="#">IR</a></li>
+                <li><a href="#">채용정보</a></li>
+                <li><a href="#">광고문의</a></li>
+                <li><a href="#">이용약관</a></li>
+            </ul>
+            <div class="box">
+                <h2><span class="blind">cgv</span></h2>
+                <address>
+                    (04377)서울특별시 용산구 한강대로 23길 55, 아이파크몰 6층(한강로동)<br>
+                    대표이사 : 서정 | 사업자등록번호 : 104-81-45690 | 통신판매업신고번호 : 2017-서울용산-0662<br>
+                    개인정보보호 책임자 : 마케팅 담당 정종민대표 | 이메일 : cjcgvmaster@cj.net | CGV고객센터 : 1544-1122
+                </address>
+                <small>copyright &copy; 2016 CJ CGV. All Rights Reserved.</small>
+            </div>
+        </div>
+    </footer>
+    <!-- // Footer -->
+</body>
+</html>
