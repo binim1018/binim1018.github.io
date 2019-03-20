@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>03.css파일순서</title>
+    <!-- 외부에서 가져 온 파일 -->
+    <link rel="stylesheet" href="other.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <!-- 내가 작성한 파일 -->
+    <link rel="stylesheet" href="mycss.css">
+    <!-- 
+        외부에서 소스를 가져 올 경우 내가 작성한 css파일보다
+        먼저 읽히도록 순서를 배치한다. (재정의가 가능해짐)
+        *단 내가 작성한 css파일이 먼저 읽힐지라도
+        외부에서 선택한 선택자보다 상세히 선택할 경우 우선 적용된다.
+     -->
+</head>
+<body>
+    <h1>제목입니다.<i class="fab fa-apple"></i></h1>
+
+</body>
+</html>

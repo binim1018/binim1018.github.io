@@ -1,0 +1,12 @@
+h1{color:blue;}
+h1 i{}
+/* (2)하지만 적용순서법칙에 따라, 상세한 선택에 스타일 적용하면 우선적용 된다. */
+h1 .fab{}
+h1 .fa-apple{}
+h1 .fab.fa-apple{}
+h1 i.fab.fa-apple{}
+i{}
+/* (1)가져 온 파일에서 .fas에 스타일이 적용돼 있으므로 동일한 부분을 재정의하고자 새 스타일도 .fas에 적용 */
+.fab{color: cornflowerblue; display: block;}
+.fa-apple{}
+i.fab.fa-apple{}

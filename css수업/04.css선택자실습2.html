@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>04.css선택자실습2</title>
+    <style>
+    /* 속성선택자 */
+    /* [속성] 속성이름을 포함하는 것 */
+    [class]{}
+    [title]{}
+
+    /* [속성="값"] 속성과 값이 완전히 일치하는 것 */
+    [title="menu2"]{border:1px solid gray;}
+    [href="#"]{color: hotpink;}
+
+    /* [속성^="값"] 속성의 값으로 시작하는 것 */
+    [title^="menu"]{background:ivory;}
+    [alt^="w"]{border: 1px solid aqua;}
+
+    /* [속성$="값"] 속성의 값으로 끝나는 것 */
+    [src$="png"]{}
+
+    /* [속성*="값"] 위치에 상관없이 속성의 값을 포함하는 것*/
+    [class*="button"]{color: blueviolet;}
+    [title*="es"]{}
+
+    /* [속성~="값"] 위치에 상관없이 속성의 값을 포함하는 것(단어만) */
+    [class~="button"]{color: brown;}
+    </style>
+</head>
+<body>
+    <ul>
+        <li><a href="#" target="_blank" title="menu1">메뉴1</a></li>
+        <li><a href="#" title="menu2">메뉴2</a></li>
+        <li><a href="#" class="button" title="menu3">메뉴3</a></li>
+        <li><a href="#" class="flat button" title="menu4">메뉴4</a></li>
+    </ul>
+
+    <!-- ul>li*4>a[href=#]{메뉴$} -->
+    <ul>
+        <li><a href="#" title="english">영어</a></li>
+        <li><a href="#" title="japanese">일본어</a></li>
+        <li><a href="#" title="chinese">중국어</a></li>
+    </ul>
+
+    <!-- img[src=../html수업/img/]*5 -->
+    <img src="../html수업/img/bg-note.png" alt="note">
+    <img src="../html수업/img/login.jpg" alt="login">
+    <img src="../html수업/img/man.png" alt="man">
+    <img src="../html수업/img/woman.png" alt="woman">
+    <img src="../html수업/img/w3.jpg" alt="w3">
+</body>
+</html>
