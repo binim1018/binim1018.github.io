@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>09.backdround</title>
+    <style>
+        *{margin: 0; padding: 0;}
+        /* html,body{height: 100%} */
+        body{
+            /* 100vh=화면 기준 100퍼센트. */
+            height: 100vh;
+
+            /* 배경색 */
+            background: burlywood;
+            
+            /* 배경이미지 */
+            background-image: url(img/city.jpg);
+            
+            /* 배경이미지 반복 설정 : no-repeat, repeat, repeat-x, repeat-y */
+            background-repeat: no-repeat;
+            
+            /* 높이가 back color와 다르게 body 높이 기준이라 body 높이=뷰포트로 설정해줘야 뷰포트 기준 center에 옴 */
+            /* 배경이미지 위치를 방향으로 지정 : top left right bottom center */
+            background-position: center;
+            /* background-position: left bottom; */
+
+            /* 배경이미지 위치를 수치로 지정 : %, px(x y축의 값을 설정) */
+            background-position: 100%;
+
+            /* 배경이미지 고정, 스크롤 처리 : fixed, scroll (기본값은 scroll) */
+            background-attachment: fixed;
+
+            /* 축약형 : 컬러 주소 반복설정 위치 고정or스크롤처리 */
+            background: burlywood url(img/city.jpg) no-repeat center fixed;
+
+            /* 배경이미지를 여러 장 보이게 하기 */
+            /* 가장 먼저 선언한 소스가 가장 위에 노출 */
+            background: url(img/city.jpg) no-repeat center fixed,
+                        url(img/ryan.png) no-repeat right bottom,
+                        url(img/woman.png) no-repeat left bottom;
+            /* 배경컬러는 새로 지정해 주기. 위에 소스에 합쳐 넣으니까 오류났음 */
+            background-color: burlywood;
+
+            /* css3에 추가된 속성 */
+            /* 배경이미지의 오른쪽이 줄어들어도 보이려면, 위치선언을 right로 해주면 됨. */
+            /*
+                cover : 이미지를 최대치로 보여주지만 이미지가 잘릴 수 있음. (여백X) =100%
+                contain : 이미지를 최대치로 보여주면서 이미지가 잘리지 않고 원본 비율을 유지하면서 보여 줌. (여백O)
+                수치로 지정 : %, px, auto 
+                ※100% 100%; => 줄어들면 이미지가 쪼그라듦 (어느 하나 잘리지 않음)
+                ※auto 100%; => 오른쪽 100퍼에 왼쪽은...??
+            */
+            background-size: cover;
+        }
+        p{color:white;}
+    </style>
+</head>
+<body>
+    <div id="lipsum">
+        <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam pulvinar fringilla dui nec bibendum. Nullam id massa ante. In ac mollis eros. Sed in libero sagittis, imperdiet ex eget, bibendum neque. Pellentesque turpis turpis, pulvinar ut mattis non, faucibus id nibh. Nullam faucibus diam eu lobortis consectetur. Quisque eget finibus elit, in sagittis erat. Suspendisse risus ligula, ornare ut purus ultricies, tempus fringilla metus. Proin dolor erat, finibus a iaculis convallis, blandit at velit.
+        </p>
+        <p>
+        Nunc in neque eget enim porttitor cursus a feugiat eros. Quisque eleifend elit non justo maximus egestas quis vel neque. Curabitur ac sem non massa commodo maximus. In ornare lacus sed pulvinar gravida. Morbi volutpat, tortor non lacinia molestie, orci eros dictum ante, non finibus lectus nibh ut elit. Etiam semper orci vel urna mollis viverra. Vivamus sed accumsan nibh. Donec id ultrices purus. Nullam non urna ac tellus pellentesque interdum.
+        </p>
+        <p>
+        Praesent consectetur urna eu urna varius tristique. Nunc ullamcorper dui nisi, vel imperdiet leo viverra at. Mauris pellentesque porttitor metus finibus mattis. Ut ligula eros, aliquet in ornare et, imperdiet at sapien. Nunc ut nisl vel quam suscipit lobortis. Nullam iaculis urna ornare iaculis volutpat. Nulla facilisi. Pellentesque blandit mauris placerat, eleifend risus ornare, consequat sapien. Maecenas viverra dolor eget nulla ornare sodales. Sed tellus lacus, lobortis id odio quis, mollis luctus felis. Donec consectetur eros quis rhoncus efficitur. Ut at pretium sem. Etiam convallis, orci semper dignissim finibus, felis dui facilisis dui, id ornare odio lectus non nisl. Cras eu posuere dui.
+        </p>
+        <p>
+        Fusce et laoreet nibh. In vehicula velit ante, nec pretium diam aliquet nec. Quisque non magna nec nibh rutrum tristique. Maecenas lobortis justo lorem, vel blandit justo commodo at. Duis ut libero molestie, placerat diam id, molestie diam. Donec at suscipit odio, sed accumsan felis. Vivamus suscipit, enim ut egestas finibus, lorem risus placerat magna, id viverra elit enim non erat. Pellentesque vitae bibendum nibh. Integer ex dolor, vestibulum a ipsum eget, faucibus semper est. Proin rhoncus velit sed felis mattis rhoncus eget vel tortor. Fusce iaculis lorem sed feugiat tristique. Sed gravida bibendum arcu, ac aliquam leo accumsan in. Morbi vehicula iaculis quam quis vestibulum. Praesent interdum ipsum turpis, sed posuere orci luctus vitae. Curabitur quis metus venenatis, aliquam mauris ac, tristique purus.
+        </p>
+        <p>
+        Suspendisse eu felis sit amet lacus placerat viverra. Nam pharetra tellus nec enim scelerisque, at venenatis mi volutpat. Pellentesque dapibus ex at aliquam lobortis. Aliquam non arcu rutrum, pretium turpis sit amet, luctus elit. Proin ut lobortis ipsum. Cras non erat rutrum, molestie ex non, porta augue. Donec at consectetur justo. Mauris congue, dui a accumsan condimentum, ipsum odio mattis sapien, sit amet egestas mi enim ac sapien. Maecenas faucibus lacus consequat mauris egestas viverra. Phasellus tempor volutpat est at sodales. Vestibulum sit amet pharetra felis, nec finibus tellus. Nullam accumsan, est eu commodo aliquet, urna mauris aliquam nulla, ut porta neque quam eu purus. Vivamus ullamcorper eget nisi vitae commodo.
+        </p>
+    </div>
+</body>
+</html>

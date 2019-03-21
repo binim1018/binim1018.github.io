@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>10.그라데이션</title>
+    <style>
+        body{
+            height: 100vh;
+            /* 그라데이션 사이트 http://www.colorzilla.com/gradient-editor/ */
+            /* radial(linear...)-gradient : radial의 원형은 ellipse(줄어들 때 타원)와 circle(줄어들 때 원형유지)
+                at 20px => 원형 위치 이동 됨
+             */
+            background: #1e5799;
+            background: -moz-radial-gradient(center, ellipse cover, #1e5799 0%, #2989d8 50%, #7db9e8 100%);
+            background: -webkit-radial-gradient(center, ellipse cover, #1e5799 0%,#2989d8 50%,#7db9e8 100%);
+            background: radial-gradient(ellipse at center, #1e5799 0%,#2989d8 50%,#7db9e8 100%);
+            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1e5799', endColorstr='#7db9e8',GradientType=1 );
+    </style>
+</head>
+<body>
+    
+</body>
+</html>
