@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>15.float, clear</title>
+    <style>
+        img:nth-of-type(1){float: left;}
+        img:nth-of-type(2){float: right; height: 200px;}
+        p{
+            /* float: left를 클리어 처리 */
+            clear: left;
+            /* float: right를 클리어 처리 */
+            clear: right;
+            /* float: left, float: right를 클리어 처리 */
+            clear: both;
+        }
+    </style>
+</head>
+<body>
+    <h2>float과 clear</h2>
+    <img src="img/woman.png" alt="">
+    <img src="img/man.png" alt="">
+    <p>
+        Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+        <br>
+        Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+        <br>
+        when an unknown printer took a galley of type and scrambled it to make a type specimen book. 
+        <br>
+        It has survived not only five centuries, but also the leap into electronic typesetting, 
+        remaining essentially unchanged.
+    </p>
+</body>
+</html>

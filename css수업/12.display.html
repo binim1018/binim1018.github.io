@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>12.display</title>
+    <style>
+        div,span{
+            border: 1px solid black;
+            height: 50px;
+        }
+        div:nth-of-type(2){display: inline;}
+        div:nth-of-type(3){display: inline-block;}
+
+        span:nth-of-type(2){display: block;}
+        span:nth-of-type(3){display: inline-block;}
+        /* 인라인 요소는 크기를 지정해도 적용이 되지 않으며
+        margin, padding을 적용해도 비정상적으로 적용되므로 주의한다. */
+    </style>
+</head>
+<body>
+    <h2>블록요소</h2>
+    <div>기본 블록요소</div>
+    <div>블록요소->인라인 요소로 변경하기</div>
+    <div>블록요소->인라인블록요소로 변경하기</div>
+
+    <h2>인라인요소</h2>
+    <span>기본 인라인요소</span>
+    <span>인라인요소->블록요소로 변경하기</span>
+    <span>인라인요소->인라인블록요소로 변경하기</span>
+</body>
+</html>
