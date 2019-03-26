@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>19.z-index.html</title>
+    <!-- 접두어 자동으로 처리해주는 스크립트 -->
+    <!-- 1. 다운로드 소스를 직접 가지고 있을 경우 -->
+    <script src="prefixfree.min.js"></script>
+    <!-- 2. 외부링크를 통해서 소스를 가져오는 경우 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
+    <style>
+        *{margin: 0; padding: 0;}
+        .wrap{
+            border: 1px solid black;
+            position: relative;
+            background: gray;
+            width: 200px; height: 200px;
+        }
+        /* 
+            z-index는 z축으로 요소가 겹쳐 있을 때 우선 순위를 부여하는 속성.
+            값은 숫자만 넣을 수 있으며 단위는 넣을 수 없다.
+            값이 높을 수록 위쪽에 배치되며 낮을 수록 아래쪽에 배치된다.
+
+            *자식요소가 z-index를 가지고 있는 상태에서 부모도 z-index를 가지면
+            우선적으로 부모끼리 비교를 먼저 하기 때문에 자식의 z-index값이 아무리 높아도
+            위쪽으로 가지 않음.
+         */
+        .wrap:nth-child(1){z-index: 2;}
+        .wrap:nth-child(2){z-index: 1; bottom: 150px; left: 50px;}
+        .wrap:nth-child(2) .green{z-index: 3000;}
+
+        .wrap div{
+            width: 100px; height: 100px; border: 1px solid black;
+            position: absolute;
+        }
+        .red{background: red; z-index: 2;}
+        .blue{background: blue; top: 20px; left: 20px; z-index: 1;}
+        .green{background: green; top:40px; left: 40px; z-index: 3;}
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <div class="red"></div>
+        <div class="blue"></div>
+        <div class="green"></div>
+    </div>
+    <div class="wrap">
+        <div class="red"></div>
+        <div class="blue"></div>
+        <div class="green"></div>
+    </div>
+</body>
+</html>

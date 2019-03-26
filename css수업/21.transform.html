@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>21.transform</title>
+    <style>
+        *{margin: 0; padding: 0;}
+        div{
+            width: 100px; height: 100px;
+            margin: 100px;
+            border: 1px solid black;
+            float: left;
+            /* 부모 쪽에 원근감 적용 : 너무 작은 수치를 기입하면 원근감이 깊게 적용되므로 주의 */
+            perspective: 300px;
+        }
+        p{
+            width: 100px; height: 100px;
+            background: blue;
+            opacity: 0.3;
+        }
+
+        /* 이동 translate() -(마이너스)는 반대 방향 */
+        div:nth-child(1) p{transform: translateX(100px);}
+        div:nth-child(2) p{transform: translateY(100px);}
+        div:nth-child(3) p{transform: translate(100px, 100px);}
+
+        /* 비틀기, 비스듬히 skew() 각도 deg */
+        div:nth-child(1) p{transform: skewX(10deg);}
+        div:nth-child(2) p{transform: skewY(10deg);}
+        div:nth-child(3) p{transform: skew(-10deg, -10deg);}
+
+        /* 크기 scale() 단위를 기입하지 않고 숫자만 기입(기본크기는 1) */
+        div:nth-child(1) p{transform: scaleX(2);}
+        div:nth-child(2) p{transform: scaleY(0.5);}
+        div:nth-child(3) p{transform: scale(2, 0.5);}
+
+        /* 회전 rotate() 각도 deg */
+        div:nth-child(1) p{transform: rotateX(45deg);}
+        div:nth-child(2) p{transform: rotateY(45deg);}
+        div:nth-child(3) p{transform: rotate(45deg);}
+    </style>
+</head>
+<body>
+    <div><p></p></div>
+    <div><p></p></div>
+    <div><p></p></div>
+</body>
+</html>
