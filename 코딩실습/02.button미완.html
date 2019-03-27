@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>02.button</title>
+    <style>
+        /* reset, common */
+        *{margin: 0; padding: 0;}
+        body{font-family: sans-serif;}
+        h3{display: inline-block; line-height: 80px; width: 100px;}
+        label{display: inline-block; vertical-align: middle; cursor: pointer;}
+        span{display: inline-block;}
+        a{display: inline-block; color: black; text-decoration: none; vertical-align: middle;}
+        /* 체크박스 */
+        input[type=checkbox]{display: none;}
+
+        /* menu/close */
+        .menu{
+            position: relative;
+            width: 25px; height: 25px;
+            margin: 19px 19px 19px 15px;
+        }
+        .menu span{
+            position: absolute;
+            top:4px; width: 25px; height: 2px;
+            background: black;
+            transform-origin: -2px 1px;
+            transition: 0.5s;
+        }
+        .menu span:nth-child(1){
+            /* bottom과 top의 값을 동시에 가지면 top이 우선권을 가지므로
+                bottom값이 우선 적용되기 위해 top의 값을 auto로 적용
+            */
+            bottom:4px; top:auto;
+        }
+        .manu span:nth-child(2){top:50%; margin-top: -1px;}
+        /* 체크가 되었을 경우에만 상태를 변경(체크 해제되면 원래 상태로 돌아감) */
+        #menu:checked + label span:nth-child(1){transform: rotate(-45deg);}
+        #menu:checked + label span:nth-child(2){opacity: 0;}
+        #menu:checked + label span:nth-child(3){transform: rotate(45deg);}
+
+        /* up/down */
+        .up-down{
+            padding: 10px 20px;
+            border-radius: 10px;
+            color: white;
+            background: #3498db;
+            border-bottom: 5px solid #2980d9;
+            /* transition은 기본 디폴트 상태에서 걸어 주어야 함. */
+            transition: 0.5s;
+        }
+        #up-down:checked +label{
+            transform: translateY(5px);
+            border-bottom-width: 5px;
+            /* 변할 때에 transition을 걸어 주면 원래 상태로 돌아갈 때 적용되지 않음. */
+        }
+
+        /* on/off */
+        .on-off{
+            position: relative;
+            width: 100px; height: 100px;
+            border-radius: 20px;
+            background: #848484;
+            transition: 0.5s;
+            overflow: hidden;
+        }
+        .on-off span{
+            position: absolute;
+            top:50%; transform: translateY(-50%);
+            /* color: white; */
+            transition: 0.5s;
+        }
+        .on-off span:nth-child(1){left:-50%;}
+        .on-off span:nth-child(2){right: 20%;}
+        .on-off .btn{
+            width: 36px; height: 36px;
+            border-radius: 50%;
+            background: #cddc39;
+            border: 2px solid white;
+            box-sizing: border-box;
+            margin: 0 2px;
+        }
+        #on-off:checked+label{background: #3498db;}
+        #on-off:checked + label span:nth-child(1){left:20%;}
+        #on-off:checked + label span:nth-child(2){right: -50%;}
+        #on-off:checked + label .btn{margin-left: 62px;}
+    </style>
+</head>
+<body>
+    <div>
+        <h3>menu/close</h3>
+        <input type="checkbox" id="menu">
+        <label for="menu" class="menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </label>
+    </div>
+
+    <div>
+        <h3>up/down</h3>
+        <input type="chekbox" id="up-down">
+        <label for="up-down" class="up-down"></label>
+    </div>
+
+    <div>
+        <h3>on/off</h3>
+        <input type="chekbox" id="on-off">
+        <label for="on-off" class="on-off">
+            <span>ON</span>
+            <span>OFF</span>
+            <span class="btn"></span>
+        </label>
+    </div>
+</body>
+</html>

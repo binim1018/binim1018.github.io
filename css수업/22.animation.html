@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>22.animation</title>
+    <style>
+        *{margin: 0; padding: 0;}
+        div{
+            width: 200px; height: 200px;
+            background: blue;
+
+            /* 애니메이션 사용하기 */
+            /* 애니메이션 이름 */
+            animation-name: myAni;
+            /* 애니메이션 시간 */
+            animation-duration: 2s;
+            /* 애니메이션 반복 횟수 숫자 또는 infinite(무한반복) */
+            animation-iteration-count: infinite;
+            /* 애니메이션 속도 : linear:일정하게 */
+            animation-timing-function: linear;
+            /* 시작 전 지연 시간 */
+            animation-delay: 1s;
+            /* 애니메이션 방향 alternate,reverse,alternate-reverse*/
+            animation-direction: reverse;
+            /* 애니메이션 끝난 후 처음으로 돌아갈 건지 forwards or backwards */
+            animation-fill-mode: forwards;
+            /* 하나로 합쳐 적용 : 순서는 상관없음 */
+            animation: myAni 2s infinite linear 1s reverse forwards;
+        }
+
+        /* 애니메이션 만들기 */
+        @keyframes myAni{
+            /* 시작 구간 (0%) */
+            form{background: blue; transform: rotate(0deg);}
+            /* 끝 구간 (100%) */
+            to{background: orange; transform: rotate(360deg);}
+        }
+    </style>
+</head>
+<body>
+    <div></div>
+</body>
+</html>
