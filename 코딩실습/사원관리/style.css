@@ -1,0 +1,135 @@
+@charset "UTF-8";
+/* reset, common */
+*{margin: 0; padding: 0;}
+body{background: #76b852; font-family: sans-serif;}
+section{height: 100vh; position: relative;}
+/* 가로세로방향으로 가운데가는 공식 */
+.center{
+    position: absolute;
+    top:50%; left:50%; transform: translate(-50%, -50%);
+}
+.blind{position: absolute; left:-9999px; font-size: 0;}
+h1{
+    text-align: center;
+    color:#fff;
+    font-size: 2em;
+    letter-spacing: 4px;
+    padding: 20px 0;
+}
+form{
+    background: #fff;
+    padding: 45px;
+    /* 텍스트 및 인라인요소 가운데 정렬 */
+    text-align: center;
+    box-shadow: 0 0 20px rgba(0,0,0,0.2), 0 5px 5px rgba(0,0,0,0.2);
+}
+.row{
+    margin-bottom: 10px; 
+    /* row의 자식 중에서 float를 사용하고 있을시 클리어처리 */
+    overflow: hidden;
+    position: relative;
+}
+.text-center{text-align: center;}
+.btn-group{margin-top: 20px;}
+.btn-group a, .btn-group button{
+    display: inline-block;
+    background: #fff; color:#76b852;
+    padding: 10px; font-weight: bold;
+    text-decoration: none; border: 1px solid #76b852;
+}
+.btn-group a:hover,
+.btn-group button:hover{background: #4caf50; color:#fff;}
+.btn-primary{
+    height: 46px; padding: 0 20px;
+    background: #4caf50; color:#fff;
+    border: none; font-weight: bold;
+    /* input박스와 수평 맞추기 */
+    vertical-align: middle;
+}
+
+/* form */
+fieldset{
+    padding-top: 10px;
+    text-align: left; 
+    border:0; border-bottom:1px solid #ddd;
+}
+form label:nth-child(1){
+    display: inline-block;
+    width: 100px;
+}
+form input[type=text],
+form input[type=password],
+form select{
+    background: #f2f2f2;
+    height: 46px;
+    border:0; 
+    padding: 0 10px;
+    box-sizing: border-box;
+    font-size: 14px;
+}
+form textarea{
+    background: #f2f2f2;
+    height: 150px;
+    border:0; 
+    padding: 10px;
+    box-sizing: border-box;
+    font-size: 14px;
+    resize: none;
+}
+input[type="radio"]{display: none;}
+.radio label{margin-right: 10px;}
+.radio i{color:#c7c7c7; margin-right: 5px; font-size: 1.4em; vertical-align: middle;}
+.radio input[type="radio"]:checked + i{color:#4cae4f;}
+
+input[type="checkbox"]{display: none;}
+.checkbox label{margin-right: 10px;}
+.checkbox i{color:#c7c7c7; margin-right: 5px; font-size: 1.4em; vertical-align: middle;}
+.checkbox input[type="checkbox"]:checked + i{color:#4cae4f;}
+
+/* 위의 내용을 합쳤을 때 */
+input[type="radio"],
+input[type="checkbox"],
+input[type="file"]{display: none;}
+.radio label,
+.checkbox label{margin-right: 10px;}
+.radio i,
+.checkbox i{color:#c7c7c7; margin-right: 5px; font-size: 1.4em; vertical-align: middle;}
+.radio input[type="radio"]:checked + i,
+.checkbox input[type="checkbox"]:checked + i{color:#4cae4f;}
+
+/* sign-up */
+/* 특정폭을 가지면서 가운데로 가는 공식(가로방향으로만) */
+.sign-up{width: 600px; margin: auto;}
+
+/* main */
+.main form label{
+    position: absolute;
+    /* 폰트아이콘의 스타일 작성 */
+    width: 46px; height: 46px; line-height: 46px;
+    font-size: 25px;
+}
+.main form input[type=text],
+.main form input[type=password]{
+    background: #f2f2f2;
+    width: 100%; height: 46px;
+    border:0; 
+    padding: 0 10px 0 46px;
+    box-sizing: border-box;
+    font-size: 14px;
+}
+.main form button[type=submit]{
+    background: #4caf50;
+    width: 100%;
+    border:0;
+    padding: 15px;
+    color:#fff;
+    font-size: 14px;
+    cursor: pointer;
+}
+.main .message{margin: 10px 0; position: relative;}
+/* 첫번째방법 */
+/* .main .message a{position: absolute; right:0; top:0;} */
+/* 두번째방법 */
+.main .message p{float: left;}
+.main .message a{float: right; color:#fff; text-decoration: none;}
+.main .message a:hover{text-decoration:underline;}
