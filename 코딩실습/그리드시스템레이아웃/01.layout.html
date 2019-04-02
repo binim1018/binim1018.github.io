@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>01.layout</title>
+    <link rel="stylesheet" href="grid_system.css">
+    <style>
+        *{margin: 0; padding: 0;}
+        .center{max-width:800px; margin:auto;}
+        header{height:100px; border-bottom: 1px solid black;}
+        header h1{text-align: center; padding-top: 25px;}
+        
+        section .box1 .wrap{background: blue; height: 300px;}
+        
+        /* box2의 row에서 바깥쪽 여백이 생겨서 가로방향 스크롤이 생기므로 숨김처리 */
+        section .box2{overflow-x: hidden;}
+        /* box2의 양쪽 끝 컬럼을 box1의 컬럼 끝에 맞추기 위해 반대방향으로 -10px씩 처리 */
+        section .box2 .row{margin: 10px -10px;}
+        /* box2의 각 컬럼의 바깥쪽 여백을 10px씩 주었음 */
+        section .box2 .wrap{background: coral; height: 300px; margin: 10px;}
+    </style>
+</head>
+<body>
+    <div class="center">
+        <header>
+            <h1>LOGO</h1>
+        </header>
+        <section>
+            <article class="box1">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="wrap"></div>
+                    </div>
+                </div>
+            </article>
+            <article class="box2">
+                <div class="row">
+                    <div class="col-sm-6 col-md-3"><div class="wrap"></div></div>
+                    <div class="col-sm-6 col-md-3"><div class="wrap"></div></div>
+                    <div class="col-sm-6 col-md-3"><div class="wrap"></div></div>
+                    <div class="col-sm-6 col-md-3"><div class="wrap"></div></div>
+                </div>
+            </article>
+        </section>
+    </div>
+</body>
+</html>

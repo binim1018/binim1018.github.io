@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>26.그리드시스템(기본방법)</title>
+    <style>
+        /* 
+            그리드 시스템이란?
+            레이아웃을 나누는 방법으로 한 줄에 노출되는 컬럼의 수가 최대 12개가 되도록 등분하여
+            나타내며 몇 개의 칼럼을 묶어서 레이아웃을 나타낼 것인지 규칙을 만든 후 사용한다.
+        */
+        *{margin: 0; padding: 0;}
+        .center{width:1200px; margin: auto; background: pink;}
+        /* col col-1이 float을 가지므로 부모 쪽에서 clear 처리 */
+        .row{overflow: hidden;}
+        /* 12등분으로 컬럼을 나눈다. 고정된 px수치ㅏㄱ 아니라 퍼센트 수치로 변경하여 사용
+            퍼센트로 계산하면 컬럼을 감싸고 있는 그룹의 넓이가 변경이 되어도 비율은 그대로 유지
+            *전체 width를 넘치는 값이 나오면 라인 개행이 됨
+        */
+        .col{float: left; /*width: 80px;*/ width: 10%; } 
+        .box{border: 1px solid black; height: 100px;}
+
+        /* 한 줄에 최대 12개가 들어가는 그리드 시스템 규칙 만들기 */
+        /* 미디어쿼리를 사용 안 하는 기본 방법 */
+        .col-1{width: 8.33%;} /* 한 줄에 12개의 컬럼 */
+        .col-2{width: 16.66%;} /* 한 줄에 6개의 컬럼 : 컬럼을 2개씩 묶음 */
+        .col-3{width: 25%;} /* 한 줄에 4개의 컬럼 : 컬럼을 3개씩 묶음 */
+        .col-4{width: 33.33%} /* 한 줄에 3개의 컬럼 : 컬럼을 4개씩 묶음 */
+        .col-5{width: 41.66%;} /* 한 줄에 2개의 컬럼 : 컬럼을 5개씩 묶음, 2개의 단일 컬럼 잔여 */ 
+        .col-6{width: 50%;} /* 한 줄에 2개의 컬럼 : 컬럼을 6개씩 묶음 */
+        .col-7{width: 58.33%;} /* 한 줄에 1개의 컬럼 : 컬럼을 7개씩 묶음, 5개의 단일 컬럼 */
+        .col-8{width: 66.66%;} /* 한 줄에 1개의 컬럼 : 컬럼을 8개씩 묶음, 4개 단일 컬럼 */
+        .col-9{width: 75%;} /* 한 줄에 1개의 컬럼 : 컬럼을 9개씩 묶음, 3개 단일 컬럼 */
+        .col-10{width: 83.33%;} /* 한 줄에 1개의 컬럼 : 컬럼을 10개씩 묶음, 2개 단일 컬럼 */
+        .col-11{width: 91.66%;} /* 한 줄에 1개의 컬럼 : 컬럼을 11개씩 묶음, 1개 단일 컬럼 */
+        .col-12{width: 100%;} /* 한 줄에 1개의 컬럼 */
+
+    </style>
+</head>
+<body>
+    <div class="center">
+        <div class="row">
+            <!-- 
+                ctel+f 찾기 모드 활성화, 삼각형 눌러 replace 입력 한번에 변경 처리 
+                class="col" class="col" col col-1
+            -->
+            <!-- col 규칙 변경하면서 box 구분해 보기 -->
+            <div class="col col-7"><div class="box"></div></div>
+            <div class="col col-4"><div class="box"></div></div>
+            <div class="col col-1"><div class="box"></div></div>
+            <div class="col col-7"><div class="box"></div></div>
+            <div class="col col-7"><div class="box"></div></div>
+            <div class="col col-7"><div class="box"></div></div>
+            <div class="col col-7"><div class="box"></div></div>
+            <div class="col col-7"><div class="box"></div></div>
+            <div class="col col-7"><div class="box"></div></div>
+            <div class="col col-7"><div class="box"></div></div>
+            <div class="col col-7"><div class="box"></div></div>
+            <div class="col col-7"><div class="box"></div></div>
+        </div>
+    </div>
+</body>
+</html>
