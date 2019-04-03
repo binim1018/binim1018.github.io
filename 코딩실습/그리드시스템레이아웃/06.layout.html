@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>06.layout</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <style>
+        *{margin: 0; padding: 0;}
+        body{font-family: sans-serif;}
+        button{border: 0; background: none;}
+        .center{max-width:960px; margin: auto; 
+            /* 부모 설정 - button 양끝으로 보내기 */
+            position: relative;
+        }
+        .skip{font-size: 0; position: absolute; left: -9999px;}
+
+        header{background: #000; height: 100px; text-align: center;}
+        header h1{padding-top: 20px;}
+        header .btn-menu{position: absolute; left:20px; top:30px;}
+        header .btn-search{position: absolute; right:20px; top:30px;}
+        header button i{color: white; font-size: 3em;}
+
+        .row{
+            margin-bottom: 40px;
+            border-top: 1px solid #000;
+            border-bottom: 1px solid #000;
+            box-sizing: border-box;
+            overflow: hidden;
+        }
+        .left{float: left; width: 460px; height: 340px;}
+        .right{float: right; width:460px; height: 340px;}
+        .video{position: relative;}
+        .video video{width: 100%; height: 100%; background: black; display: block;}
+        .video button{
+            position: absolute;
+            top:50%; left:50%; transform: translate(-50%, -50%);
+            width: 100px; height: 100px;
+            background: url(img/btn-play.PNG); /* 확장자명 대소문자 구분함 */
+            cursor: pointer;
+        }
+        
+        .box{}
+        .box .title{}
+        .box .time{}
+        .box button{}
+
+    </style>
+</head>
+<body>
+    <!-- 배경색은 100%로 처리하고 내용은 특정 폭 안에 가두고 싶을 때 -->
+    <header>
+        <div class="center">
+            <h1><img src="img/beyonce-logo.jpg" alt="beyonce"></h1>
+            <button class="btn-menu">
+                <i class="fas fa-bars"></i>
+                <span class="skip">메뉴</span>
+            </button>
+            <button class="btn-search">
+                <i class="fas fa-search"></i>
+                <span class="skip">검색</span>
+            </button>
+        </div>
+    </header>
+
+    <section class="center">
+        <article>
+            <div class="row">
+                <div class="video left">
+                    <video src="LEMONADE_Trailer_HBO.mp4" type="video/mp4"></video>
+                    <button class="play"><span class="skip">play</span></button>
+                </div>
+                <div class="box right">
+                    <div class="title">LEMONADE_Trailer</div>
+                    <div class="time">3:05</div>
+                    <button>BUY VIDEO</button>
+                </div>
+            </div>
+            <div class="row">
+                <div class="video right">
+                    <video src="bear.mp4" type="video/mp4"></video>
+                    <button class="play"><span class="skip">play</span></button>
+                </div>
+                <div class="box left">
+                    <div class="title">BEAR</div>
+                    <div class="time">1:00</div>
+                    <button>BUY VIDEO</button>
+                </div>
+            </div>
+            <div class="row">
+                <div class="video left">
+                    <video src="LEMONADE_Trailer_HBO.mp4" type="video/mp4"></video>
+                    <button class="play"><span class="skip">play</span></button>
+                </div>
+                <div class="box right">
+                    <div class="title">LEMONADE_Trailer</div>
+                    <div class="time">3:05</div>
+                    <button>BUY VIDEO</button>
+                </div>
+            </div>
+        </article>
+    </section>
+</body>
+</html>

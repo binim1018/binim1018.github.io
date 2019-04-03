@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>05.layout</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <link rel="stylesheet" href="grid_system.css">
+    <style>
+        *{margin: 0; padding: 0;}
+        body{font-family: sans-serif;}
+        button{border: 0; background: none;}
+        .center{max-width:960px; margin: auto; 
+            /* 부모 설정 - button 양끝으로 보내기 */
+            position: relative;
+        }
+        .skip{font-size: 0; position: absolute; left: -9999px;}
+
+        header{background: #000; height: 100px; text-align: center;}
+        header h1{padding-top: 20px;}
+        header .btn-menu{position: absolute; left:20px; top:30px;}
+        header .btn-search{position: absolute; right:20px; top:30px;}
+        header button i{color: white; font-size: 3em;}
+
+        section.center{margin: 100px auto;}
+        article img{max-width:100%;}
+        article .text{padding: 0 0 0 10px;}
+        article .text h2{font-size: 26px;}
+        article .text p{
+            font-size: 15px; line-height: 25px; 
+            text-align: justify; padding-top: 25px;
+        }
+
+        /* .gallery.row에서 마이너스값을 사용하여 가로스크롤이 발생했을 때 없애는 법 */
+        article{overflow-x: hidden;}
+        article dl{padding: 30px 0 50px;} /* 위 좌우 아래 */
+        article dl dt{font-size: 25px; font-weight: bold;}
+        article dl dd{font-size: 16px; line-height: 25px;}
+
+        /* .col-md-6의 자식 선택 */
+        .contents .col-md-6 > *{}
+        .gallery.row{margin: 0 -15px;}
+        .gallery img{padding: 0 15px; width: 100%; box-sizing: border-box;}
+
+        /* 0~태블릿까지 */
+        @media screen and (max-width:991px){
+            header{height: 60px;}
+            header h1{padding-top: 5px;}
+            header h1 img{width: 150px;}
+            header .btn-menu,header .btn-search{top:17px;}
+            header h1 button{font-size: 2em;}
+            section.center{margin: 20px 0;}
+            .contents > .col-md-6:nth-child(1){text-align: center;}
+            article dl{padding: 30px 15px; }
+            article .text{padding: 0 15px; }
+            .gallery img{margin-bottom: 15px;}
+        }
+    </style>
+</head>
+<body>
+    <!-- 배경색은 100%로 처리하고 내용은 특정 폭 안에 가두고 싶을 때 -->
+    <header>
+        <div class="center">
+            <h1><img src="img/beyonce-logo.jpg" alt="beyonce"></h1>
+            <button class="btn-menu">
+                <i class="fas fa-bars"></i>
+                <span class="skip">메뉴</span>
+            </button>
+            <button class="btn-search">
+                <i class="fas fa-search"></i>
+                <span class="skip">검색</span>
+            </button>
+        </div>
+    </header>
+    <section class="center">
+        <article>
+            <div class="contents row">
+                <div class="col-md-6">
+                    <img src="img/worldwater1.jpg" alt="">
+                </div>
+                <div class="col-md-6">
+                    <div class="text">
+                        <h2>WORLD WATER DAY: BG4B UPDATE</h2>
+                        <p>Today we celebrate World Water Day, with an announcement from our friends at Gucci and CHIME FOR CHANGE as well as a progress update from our last trip – the first 35 wells have now been completed!ompleted! <br>Through BeyGOOD, Beyoncé launched BEYGOO4BURUNDI with UNICEF USA in 2017 to support programs to improve water, sanitation and basic hygiene practices in the hardest-to-reach areas of Burundi, where nearly half the population had no access to safe water.</p>
+                        <p>We're excited to share that Gucci and CHIME FOR CHANGE have officially partnered with BEYGOOD4BURUNDI. Gucci's $1M commitment to the initiative as a founding partner will help support the building of 80 additional wells, providing access to clean, safe water to more than 120,000 women, girls, and their families.</p>
+                        <p>Learn more about Burundi and our progress to date below.</p>
+                    </div>
+                </div>
+            </div>
+            <dl>
+                <dt>BURUNDI AT A GLANCE</dt>
+                <dd>Provinces: 18</dd>
+                <dd>Poverty: 8 out of 10 people live on less than $1.25 a day</dd>
+                <dd>Pop: 11.5 Million -49% under 18 years old</dd>
+                <dd>Women: 51%</dd>
+                <dd>Cause of death in children under 5: Endemic water-born diseases</dd>
+                <dd>Water access: 24.5% use unsafe sources for water</dd>
+                <dd>Life expectancy: 43 years</dd>
+            </dl>
+            <div class="gallery row">
+                <div class="col-sm-4">
+                    <img src="img/worldwater2.jpg" alt="">
+                </div>
+                <div class="col-sm-4">
+                    <img src="img/worldwater3.jpg" alt="">
+                </div>
+                <div class="col-sm-4">
+                    <img src="img/worldwater4.jpg" alt="">
+                </div>
+            </div>
+        </article>
+    </section>
+</body>
+</html>

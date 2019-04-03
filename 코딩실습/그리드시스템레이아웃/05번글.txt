@@ -1,0 +1,17 @@
+﻿<div class="text">
+            <h2>WORLD WATER DAY: BG4B UPDATE</h2>
+            <p>Today we celebrate World Water Day, with an announcement from our friends at Gucci and CHIME FOR CHANGE as well as a progress update from our last trip – the first 35 wells have now been completed! Through BeyGOOD, Beyoncé launched BEYGOO4BURUNDI with UNICEF USA in 2017 to support programs to improve water, sanitation and basic hygiene practices in the hardest-to-reach areas of Burundi, where nearly half the population had no access to safe water.</p>
+            <p>We're excited to share that Gucci and CHIME FOR CHANGE have officially partnered with BEYGOOD4BURUNDI. Gucci's $1M commitment to the initiative as a founding partner will help support the building of 80 additional wells, providing access to clean, safe water to more than 120,000 women, girls, and their families.</p>
+            <p>Learn more about Burundi and our progress to date below.</p>
+          </div>
+
+<dl>
+        <dt>BURUNDI AT A GLANCE</dt>
+        <dd>Provinces: 18</dd>
+        <dd>Poverty: 8 out of 10 people live on less than $1.25 a day</dd>
+        <dd>Pop: 11.5 Million -49% under 18 years old</dd>
+        <dd>Women: 51%</dd>
+        <dd>Cause of death in children under 5: Endemic water-born diseases</dd>
+        <dd>Water access: 24.5% use unsafe sources for water</dd>
+        <dd>Life expectancy: 43 years</dd>
+      </dl>
