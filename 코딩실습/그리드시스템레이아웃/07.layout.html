@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>07.layout</title>
+    <style>
+        *{margin: 0; padding: 0;}
+        .skip{font-size:0; position: absolute; left:-9999px;}
+        .center{max-width: 960px; margin: auto;}
+        body{font-family: sans-serif;}
+
+        header{
+            height: 120px;
+            background: #ffd300; text-align: center;
+            margin-bottom: 50px;
+        }
+        header h1{
+            /* block을 inline 성질 요소로. 가운데 두기 위해 */
+            display: inline-block;
+            /* 백그라운드를 적용할 때는 무조건 넓이와 높이가 지정되어야 함 */
+            width: 300px; height: 30px;
+            margin-top: 45px;
+            background: url(img/kakaofriends-logo.png) no-repeat center;
+        }
+
+        .row{margin-bottom: 20px; overflow: hidden;}
+        .left{float: left;}
+        .right{float: right;}
+
+        /* 이미지 박스 */
+        .friends .img-box{
+            width: 280px; height: 260px;
+            background-size: cover;
+            background-repeat: no-repeat;
+            /* 기본 위치는 left top */
+            background-position: right bottom;
+        }
+        .friends .ryan .img-box{background-image: url(img/friends_ryan.jpg);}
+        .friends .apeach .img-box{background-image: url(img/friends_apeach.jpg);}
+        .friends .tube .img-box{background-image: url(img/friends_tube.jpg);}
+        .friends .frodo .img-box{background-image: url(img/friends_frodo.jpg);}
+
+        /* 말풍선 */
+        .friends .balloon{
+            position: relative;
+            width: 630px; height: 260px;
+            background: white; border-radius: 15px; 
+            padding: 30px 40px; box-sizing: border-box;
+        }
+        .friends .ryan .balloon{border:5px solid #39516d;}
+        .friends .apeach .balloon{border:5px solid #fec6c8;}
+        .friends .tube .balloon{border:5px solid #94ccd9;}
+        .friends .frodo .balloon{border:5px solid #a98342;}
+        .friends .balloon dl{font-weight: bold;}
+        .friends .balloon dl dt{padding-bottom: 20px;}
+        .friends .ryan .balloon dl dt{color:#39516d;}
+        .friends .apeach .balloon dl dt{color:#fec6c8;}
+        .friends .tube .balloon dl dt{color: #94ccd9;}
+        .friends .frodo .balloon dl dt{color: #a98342;}
+        .friends .balloon dl dt b{display: block; font-size: 46px;}
+        .friends .balloon dl dt span{font-size: 24px; opacity: 0.5;}
+        .friends .balloon dl dd{font-size: 20px; color:#808080;}
+
+        /* 말풍선 꼬리달기 */
+        .friends .balloon::after{
+            /* after나 before를 사용하면 content는 빈 값이더라도 필수로 넣어야 함 */
+            content: '';
+            position: absolute;
+            top:50%; transform: translateY(-50%);
+            width:26px; height: 26px;
+        }
+        .friends .ryan .balloon::after{background-image: url(img/arrow1.png); left: -25px;}
+        .friends .apeach .balloon::after{background-image: url(img/arrow2.png); right: -25px;}
+        .friends .tube .balloon::after{background-image: url(img/arrow3.png); left: -25px;}
+        .friends .frodo .balloon::after{background-image: url(img/arrow4.png); right: -25px;}
+
+        /* 태블릿 이하 */
+        @media screen and (max-width: 950px){
+            header{margin-bottom: 20px;}
+            .left, .right{float: none;}
+            .img-box{float: left;}
+            .friends .balloon{width: auto; border-radius: 0; margin-left: 280px;}
+            .friends .balloon::after{display: none;}
+        }
+
+        /* 스마트폰 */
+        @media screen and (max-width: 767px){
+            .friends .left, 
+            .friends .right{float: none; width: 100%; margin: 0;}
+            /* !important는 우선순위에 상관없이 무조건 1순위가 되도록 한다. */
+            .friends .balloon{height: auto !important;}
+            .friends .img-box {
+                height: 360px;
+            }
+        }
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+        $(function(){
+            $(window).resize(function(){
+                //디바이스의 사이즈가 변경될때마다 디바이스의 넓이를 구한다.
+                var w=$(window).width();
+                if(w<768){//모바일 환경일 때
+                    //이미지박스의 높이를 이미지박스의 넓이값으로 바꾼다.
+                    $('.img-box, .friends .balloon').outerHeight($('.img-box').width());
+                }else{//모바일 환경이 아닐 때
+                    //인라인으로 들어간 스타일값을 제거한다.
+                    $('.img-box, .friends .balloon').removeAttr('style');
+                }
+            })
+            //리사이즈 이벤트를 강제로 발생
+            $(window).trigger('resize');
+        })
+    </script>
+</head>
+<body>
+    <header>
+        <h1><span class="skip">kakao friends</span></h1>
+    </header>
+    <section class="center">
+        <article class="friends">
+            <div class="row ryan">
+                <div class="img-box left"></div>
+                <div class="balloon right">
+                    <dl>
+                        <dt><b>라이언</b><span>Ryan</span></dt>
+                        <dd>위로의 아이콘, 믿음직스러운 조언자</dd>
+                    </dl>
+                </div>
+            </div>
+            <div class="row apeach">
+                <div class="img-box right"></div>
+                <div class="balloon left">
+                    <dl>
+                        <dt><b>어피치</b><span>Apeach</span></dt>
+                        <dd>뒤태가 매력적인 애교만점 어피치</dd>
+                    </dl>
+                </div>
+            </div>
+            <div class="row tube">
+                <div class="img-box left"></div>
+                <div class="balloon right">
+                    <dl>
+                        <dt><b>튜브</b><span>Tube</span></dt>
+                        <dd>화나면 미친 오리로 변신하는 튜브</dd>
+                    </dl>
+                </div>
+            </div>
+            <div class="row frodo">
+                <div class="img-box right"></div>
+                <div class="balloon left">
+                    <dl>
+                        <dt><b>프로도</b><span>Frodo</span></dt>
+                        <dd>부자집 도시개 프로도</dd>
+                    </dl>
+                </div>
+            </div>
+        </article>
+    </section>
+</body>
+</html>

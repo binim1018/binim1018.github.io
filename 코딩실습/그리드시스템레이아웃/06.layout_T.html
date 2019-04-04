@@ -5,117 +5,132 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>06.layout</title>
-    <!-- https://cdnjs.com/ -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
     <style>
         *{margin: 0; padding: 0;}
         body{font-family: sans-serif;}
-        button{border: 0; background: none;}
-        .center{max-width:960px; margin: auto; 
-            /* 부모 설정 - button 양끝으로 보내기 */
+        button{border:0; background: none;}
+        .center{max-width: 960px; margin: auto; 
+            /* 부모설정 - button 양끝으로 보내기 */
             position: relative;
         }
-        .skip{font-size: 0; position: absolute; left: -9999px;}
-        video{width: 100%; height: 100%; background: black; display: block;}
+        .skip{font-size: 0; position: absolute; left:-9999px;}
+        video{width: 100%; height: 100%; background: #000; display: block;}
 
-        header{background: #000; height: 100px; text-align: center; margin-bottom: 30px;}
+        header{background: #000; height: 100px; text-align: center; margin-bottom: 20px;}
         header h1{padding-top: 20px;}
         header .btn-menu{position: absolute; left:20px; top:30px;}
         header .btn-search{position: absolute; right:20px; top:30px;}
-        header button i{color: white; font-size: 3em;}
+        header button i{color:#fff; font-size: 3em;}
 
         .row{
             margin-bottom: 40px;
-            border-top: 1px solid #000;
-            border-bottom: 1px solid #000;
+            border-top:1px solid #000;
+            border-bottom:1px solid #000;
             box-sizing: border-box;
-            /* float의 값을 가지고 있는 자식을 위해 clear 처리 */
+            /* float의 값을 가지고 있는 자식을 클리어처리 */
             overflow: hidden;
         }
         .left{float: left; width: 460px; height: 340px;}
-        .right{float: right; width:460px; height: 340px;}
-        .video{position: relative;}
+        .right{float: right; width: 460px; height: 340px;}
+        .video{position: relative;}                
         .video button{
             position: absolute;
             top:50%; left:50%; transform: translate(-50%, -50%);
             width: 100px; height: 100px;
-            background: url(img/btn-play.PNG); /* 확장자명 대소문자 구분함 */
+            background: url(img/btn-play.PNG);
             cursor: pointer;
         }
-        
+
         .box{text-align: center;}
-        .box .title{padding-top: 100px; font-size: 30px;}
+        .box .title{padding-top: 100px;font-size: 25px;}
         .box .time{font-size: 25px;}
         .box button{
             width: 140px; height: 50px;
             font-size: 20px; font-weight: bold;
-            background: black; color: white;
+            background: #000; color:#fff;
             margin-top: 20px; cursor: pointer;
-        }
+        }    
 
         /* 팝업 */
         #popup{
-            /* 스크롤이 발생 되어도 항상 화면의 정 가운데 보이도록 처리 */
-            position: fixed;
-            width:800px;
-            top: 50%; left: 50%; transform: translate(-50%, -50%);
-            border: 1px solid black; background: white;
-            /* 기본 상태는 숨김 처리 */
+            /* 기본 상태는 숨김상태 */
             display: none;
+            /* 스크롤이 발생되어도 항상 화면의 정가운데 보이도록 처리 */
+            position: fixed;
+            width: 750px;
+            top:50%; left:50%; transform: translate(-50%, -50%);
+            border:1px solid #000; background: #000;
         }
-        #popup .title{position: relative; height: 50px; background: white;}
+        #popup .title{position: relative; height: 50px; background: #fff;}
         #popup .title h2{line-height: 50px; padding-left: 10px;}
-        #popup .title span{padding-left: 20px; font-weight: normal; font-size: 22px;}
+        #popup .title h2 span{
+            padding-left: 20px;
+            font-weight: normal;
+            font-size: 18px;
+        }            
         #popup .title button{
-            position: absolute; right: 0; top: 0;
-            width:50px; height:50px; font-size: 1.3em;
+            position: absolute; right:0; top:0;
+            width: 50px; height: 50px; font-size: 1.3em;
         }
 
-        /* 스마트폰 - screen은 생략 가능 */
+        /* 스마트폰 - screen은 생략가능 */
         @media (max-width:767px){
             .row{margin-bottom: 0;}
             /* 고정넓이에서 상대넓이로 변경 */
-            .left, .right{width:100%; height: auto;}
+            .left, .right{width: 100%; height: auto;}
             .box{padding: 20px 0;}
-            .box .title{padding-top: 0; }
+            .box .title{padding-top: 0;}
+            
+            #popup{
+                width: 100%;
+                height: 100%;
+            }
+            #popup .body{
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+                width: 100%;
+            }
 
-            #popup{width:100%; height: 100%; background: black;}
-            #popup .body{position: absolute; top:50%; transform:translateY(-50%);}
         }
-        @media screen and (min-width:768px) and (max-width:991px){
-            .left, .right{width:50%; height:300px;}
+
+        /* 태블릿 */
+        @media (min-width:768px) and (max-width:991px){
+            .left, .right{width: 50%; height: 300px;}
             .box .title{padding-top: 80px;}
         }
     </style>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script>
         $(function(){
-            $('.play').click(function(){
-                // 팝업을 보여준다 = display:block
-                $('#popup').show();
+           $('.play').click(function(){
+               //팝업을 보여준다. display:block
+              $('#popup').show(); 
 
-                // 소스 변경하기
-                // 필요한 값 얻기
-                var title=$(this).parents('.row').find('.title').text();
-                var time=$(this).parents('.row').find('.time').text();
-                var videoSource=$(this).parents('.row').find('video').attr('src');
+              //소스변경하기 
+              //필요한 값 얻기
+              var title=$(this).parents('.row').find('.title').text(); 
+              var time=$(this).parents('.row').find('.time').text(); 
+              var videoSource=$(this).parents('.row').find('video').attr('src'); 
+            
+              //팝업에 있는 동영상 제목, 시간, 소스 변경 
+              $('#popup h2').html(title + '<span>'+time+'</span>');
+              $('#popup video').attr('src',videoSource);  
+              //비디오 소스를 변경처리후 바뀐동영상으로 재생준비(로드)            
+              $('#popup video')[0].load();
+           })
 
-                // 팝업에 있는 동영상 제목, 시간, 소스 변경
-                $('#popup h2').html(title+'<span>'+time+'</span>');
-                $('#popup video').attr('src',videoSource);
-                // 비디오 소스를 변경처리 후 바뀐 동영상으로 재생 준비(load)
-                $('#popup video')[0].load();
-            })
+           $('#popup button').click(function(){
+               //팝업을 숨긴다. display:none
+              $('#popup').hide(); 
+           })
 
-            $('#popup button').click(function(){
-                // 팝업을 숨긴다 = display:none
-                $('#popup').hide();
-            })
         })
     </script>
 </head>
 <body>
-    <!-- 배경색은 100%로 처리하고 내용은 특정 폭 안에 가두고 싶을 때 -->
+    <!-- 배경색은 100%로 처리하고 내용은 특정폭안에 가두고 싶을때 -->
     <header>
         <div class="center">
             <h1><img src="img/beyonce-logo.jpg" alt="beyonce"></h1>
@@ -129,7 +144,6 @@
             </button>
         </div>
     </header>
-
     <section class="center">
         <article>
             <div class="row">
@@ -138,7 +152,7 @@
                     <button class="play"><span class="skip">play</span></button>
                 </div>
                 <div class="box right">
-                    <div class="title">LEMONADE_Trailer</div>
+                    <div class="title">LEMONADE Trailer</div>
                     <div class="time">3:05</div>
                     <button>BUY VIDEO</button>
                 </div>
@@ -160,7 +174,7 @@
                     <button class="play"><span class="skip">play</span></button>
                 </div>
                 <div class="box right">
-                    <div class="title">LEMONADE_Trailer</div>
+                    <div class="title">LEMONADE Trailer</div>
                     <div class="time">3:05</div>
                     <button>BUY VIDEO</button>
                 </div>
@@ -175,7 +189,7 @@
             <button>닫기</button>
         </div>
         <div class="body">
-            <!-- controls 속성은 비디오를 제어할 수 있는 컨트롤을 생성해 준다. -->
+            <!-- controls속성은 비디오를 제어할 수 있는 컨트롤을 생성해준다. -->
             <video id="video" src="bear.mp4" type="video/mp4" controls></video>
         </div>
     </div>
