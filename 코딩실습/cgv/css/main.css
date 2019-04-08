@@ -1,0 +1,77 @@
+@charset "UTF-8";
+
+/* reset, common ============================================================================================== */
+*{margin: 0; padding: 0;}
+li{list-style: none;}
+a{text-decoration: none;}
+button{border:0; background: none;}
+.blind{font-size: 0; position: absolute; left: -9999px;}
+.center{width:980px; margin: auto; position: relative;}
+
+/* Top banner ================================================================================================= */
+#top-banner{background-color: black;/* height: 80px; */}
+/* 인라인요소를 넣었을 때 밑부분에 생기는 여백 없애기-top-banner에 height 주지 않아도 됨. */
+#top-banner img{display: block;}
+#top-banner button{position: absolute; top:0; right: 0; color: white; font-size: 1.5em;}
+
+/* header ===================================================================================================== */
+/* header의 배경은 x축으로 반복 bg_v_line.gif */
+/*  */
+header{background: url(../img/bg_header.gif); background-repeat: repeat-x; text-align: center;}
+.snb{position: absolute; right:0; top:3px;}
+.snb a{font-size: 13px; color: #777; margin-left:4px;}
+/* 가로선은 border를 사용하거나 bg_v_line.gif파일을 백그라운드로 처리 */
+.snb a:first-child{
+    background: url(../img/bg_v_line.gif) right center no-repeat;
+    /* 글자와 배경 사이의 여백을 늘려 준다. */
+    padding-right: 10px;
+}
+
+.gnb{height:200px;}
+.gnb h1{position: absolute; top:60px;}
+.gnb h2{padding-top: 59px;}
+.gnb nav{display: inline-block; margin-top: -3px;}
+.gnb nav ul{overflow: hidden;}
+.gnb nav ul li{float: left; padding: 0 30px;} /* float성질 주면 text-align이 안 먹음. */
+.gnb nav ul li a{color: #000; font-weight: bold; font-size: 18px;}
+
+.search{position: absolute; bottom:10px; left:50%; transform: translateX(-50%);}
+.search input{
+    width: 300px; height: 30px; 
+    padding: 0 10px; border:1px solid #cacaca;
+    box-sizing: border-box; border-right: 0;
+    float: left;
+}
+.search button{
+    background: red; color:#fff;
+    width: 50px; height: 30px; font-weight: bold;
+}
+
+/* 메인광고(슬라이드) =========================================================================================== */
+.main-ad{background: url(../img/bg_c_bricks.png) repeat-x;}
+.main-ad .slide{}
+.main-ad .slide .slide-image{}
+.main-ad .slide .slide-image li{display: none;}
+.main-ad .slide .slide-image li.on{display: inline-block;}
+
+/* 불렛 */
+.main-ad .slide ol{position: absolute; bottom: 20px; left:50%;}
+.main-ad .slide ol li{
+    border-radius: 50%; background: gray; width: 15px; height: 15px;
+    display: inline-block;
+}
+.main-ad .slide ol li a{}
+.main-ad .slide ol li a.on{}
+
+/* 화살표 */
+.main-ad .slide button{position: absolute; top: 50%; color: white; font-size: 3em; transition: 0.5s; opacity: 0;}
+.main-ad .slide button.prev{left:5px;}
+.main-ad .slide button.next{right: 5px;}
+.main-ad .slide:hover button.prev{left:20px; opacity: 1;}
+.main-ad .slide:hover button.next{right: 20px; opacity: 1;}
+
+/* 무비셀렉션 =================================================================================================== */ 
+
+/* 이벤트 ====================================================================================================== */
+
+/* footer ====================================================================================================== */

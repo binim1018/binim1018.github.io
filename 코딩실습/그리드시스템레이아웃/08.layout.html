@@ -8,7 +8,7 @@
     <style>
         *{margin: 0; padding: 0;}
         .skip{font-size:0; position: absolute; left:-9999px;}
-        .center{max-width: 960px; margin: auto;}
+        .center{max-width: 960px; margin: auto; position: relative; height: 800px;}
         body{font-family: sans-serif;}
 
         header{
@@ -25,26 +25,25 @@
             background: url(img/kakaofriends-logo.png) no-repeat center;
         }
 
-        section{
-            position: relative;
-            height: 800px;
-            margin: 100px auto;
-        }
-
-        input{}
+        /* 카드를 제어하기 위한 라디오박스(단일선택) 숨기기 */
+        input{display: none;}
 
         /* 카드의 공통 모양 */
         label{
             position: absolute;
-            top:50%; transform: translateY(-50%);
+            top:50%; transform: translateY(-50%); /* 수직방향 중앙정렬 */
+            /* 100% 안에 카드 3장 넣기 */
             width: 33.33%; height: 700px;
             color: white; text-align: center;
+            /* x축, y축 */
             background-position: 50px 90%;
             background-size: 100%;
             transition: 0.5s;
             background-repeat: no-repeat;
         }
+        /* 부모를 기준으로 가로축 위치 잡기 */
         .card1{left: 0; background-color: #fec6c8; background-image: url(img/어피치.png);}
+        /* 가운데 있는 카드는 x,y축으로 중앙에 자리 잡아야 하므로 transform 다시 작성 */
         .card2{
             left: 50%; transform: translate(-50%,-50%);
             background-color: #395162; background-image: url(img/라이언.png);
@@ -54,8 +53,31 @@
         /* 선택되어진 카드는 앞으로 돌출시킨다. */
         input:checked+label{
             width: 40%; height: 800px;
+            /* 겹쳐져 있을 경우에도 마크업의 순서에 상관없이 우선권을 가진다. */
             z-index: 1;
             box-shadow: 0 0 10px 3px rgba(0,0,0.5);
+        }
+
+        label h2{padding-top: 50px; font-size: 46px;}
+        label span{font-size: 24px; opacity: 0.5;}
+
+        /* 스마트폰 */
+        @media (max-width:767px){
+            .center{
+                /* 부모가 아닌 보이는 화면을 기준으로 영역 잡기 */
+                position: fixed;
+                bottom: 30px;
+                top:150px;
+                width: 100%;
+                /* 800px로 잡은 부분 풀어주기 */
+                height: auto;
+            }
+            label{
+                height: 90%;
+                background-position: 20px 90%;
+            }
+            input:checked+label{height: 100%;}
+            label h2{font-size: 2em;}
         }
     </style>
 </head>
