@@ -7,6 +7,7 @@ a{text-decoration: none;}
 button{border:0; background: none;}
 .blind{font-size: 0; position: absolute; left: -9999px;}
 .center{width:980px; margin: auto; position: relative;}
+body{background: #fdfcf0;}
 
 /* Top banner ================================================================================================= */
 #top-banner{background-color: black;/* height: 80px; */}
@@ -49,29 +50,96 @@ header{background: url(../img/bg_header.gif); background-repeat: repeat-x; text-
 
 /* 메인광고(슬라이드) =========================================================================================== */
 .main-ad{background: url(../img/bg_c_bricks.png) repeat-x;}
-.main-ad .slide{}
-.main-ad .slide .slide-image{}
-.main-ad .slide .slide-image li{display: none;}
-.main-ad .slide .slide-image li.on{display: inline-block;}
+.main-ad .slide{height: 450px; background: white;}
+.main-ad .slide .slide-image li{position: absolute; display: none;}
+.main-ad .slide .slide-image li.on{display: block;}
+.main-ad .slide .slide-image li img{display: block;}
 
 /* 불렛 */
-.main-ad .slide ol{position: absolute; bottom: 20px; left:50%;}
-.main-ad .slide ol li{
-    border-radius: 50%; background: gray; width: 15px; height: 15px;
-    display: inline-block;
+/* 위치 잡기 */
+.main-ad .slide ol{position: absolute; bottom: 20px; left:50%; transform: translateX(-50%);}
+/* 요소를 붙이면서 간격 벌리기 */
+.main-ad .slide ol li{float: left; padding: 0 5px;}
+/* 모양을 잡는다. */
+.main-ad .slide ol li a{
+    /* a가 인라인 요소기 때문에 크기를 가질 수 없어서 블록 요소로 바꿔 줌. */
+    display: inline-block; /* position:absolute가 되면 크기를 가질 수 있음. */
+    width: 15px; height: 15px; 
+    border-radius: 50%; 
+    background: gray;
 }
-.main-ad .slide ol li a{}
-.main-ad .slide ol li a.on{}
+.main-ad .slide ol li a.on{background: none; border: 3px solid red; box-sizing: border-box;}
 
 /* 화살표 */
-.main-ad .slide button{position: absolute; top: 50%; color: white; font-size: 3em; transition: 0.5s; opacity: 0;}
+.main-ad .slide button{
+    position: absolute; top: 50%; transform: translateY(-50%);
+    width: 24px; height: 44px;
+    color: white; font-size: 3em; transition: 0.5s; opacity: 0;
+}
 .main-ad .slide button.prev{left:5px;}
 .main-ad .slide button.next{right: 5px;}
 .main-ad .slide:hover button.prev{left:20px; opacity: 1;}
 .main-ad .slide:hover button.next{right: 20px; opacity: 1;}
 
 /* 무비셀렉션 =================================================================================================== */ 
+article h2{
+    text-align: center;
+    background: url(../img/bg_h3_line.jpg) repeat-x center;
+    /* margin:30px 0; */
+}
+article h2 img{
+    /* background: #fdfcf0; padding: 0 20px; */
+    border: 20px solid #fdfcf0;
+}
+
+.movie-selection ul{overflow: hidden;}
+.movie-selection ul li:nth-child(1){float: left;}
+.movie-selection ul li:nth-child(2){float: right;}
 
 /* 이벤트 ====================================================================================================== */
+.event ul{overflow: hidden;}
+.event ul li{float: left; margin-right:6.6px;}
+/* .event ul li{float: left; width:25%; text-align:center;} */
+.event ul li:last-child{margin-right: 0;}
+.event ul li img{display: block;}
+/* .event ul li img{vertical-align:top;} */
 
 /* footer ====================================================================================================== */
+footer{
+    margin-top: 50px;
+    border-top: 1px solid #777;
+    background: url(../img/bg_footer_com.gif) repeat-x bottom;
+    /* 벽돌 배경만큼의 영역을 안쪽 여백(밑쪽)으로 확보한다. 또는 높이=height를 줘도 됨. */
+    padding-bottom: 150px;
+}
+footer ul{margin:20px 0;}
+footer ul li{
+    display: inline-block;
+    background: url(../img/bg_v_line.gif) right center no-repeat;
+}
+footer ul li:last-child{background: none;}
+footer ul li a{font-size: 14px; padding-right: 12px; color: #555;}
+
+/* 
+    부모의 기준을 정할 때 큰 영역을 기준으로 할지
+    아니면 새로운 부모를 기준으로 잡을지를 상황에 맞게 지정한다.
+    안쪽에 있는 자식은 position:absolute인 상황이면
+    가장 가까운 부모를 기준으로 위치를 잡게 된다.
+*/
+footer .box{position: relative;}
+footer .box h2{
+    position: absolute;
+    background: url(../img/sprite.png);
+    width:89px; height: 43px;
+    background-position: -145px -319px;
+}
+footer .box address{
+    font-style: normal;
+    font-size: 12px; 
+    margin-left: 120px;
+}
+footer .box small{
+    position: absolute;
+    right: 0; bottom: 0;
+    color: #999;
+}
