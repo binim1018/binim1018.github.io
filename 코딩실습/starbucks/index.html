@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>스타벅스 코리아</title>
+    <!-- 파비콘 이미지 : 파비콘 만들어 주는 사이트 https://www.favicon-generator.org/ -->
+    <!-- 파비콘은 title에 표시된 웹사이트의 제목과 함께 표시되는 아이콘을 말함. -->
+    <link rel="shortcut icon" href="img/favicon.ico" type="image//x-icon">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/grid_system.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <div class="title"><h1>STARBUCKS</h1></div>
+        <!-- 모바일 환경에서만 보이는 토글메뉴버튼 -->
+        <input type="checkbox" id="btn-menu">
+        <label for="btn-menu" class="btn-menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </label>
+
+        <!-- 검색/네비게이션 -->
+        <nav>
+            <form action="#">
+                <label for="search" class="blind">통합검색</label>
+                <input type="text" id="search">
+                <button><span class="blind">검색</span></button>
+            </form>
+            <ul class="gnb">
+                <li>
+                    <!-- 1depth -->
+                    <a href="#">COFFEE</a>
+                    <!-- 2depth -->
+                    <ul>
+                        <li><a href="#">커피</a></li>
+                        <li><a href="#">나와 어울리는 커피</a></li>
+                        <li><a href="#">스타벅스 리저브<sup>TM</sup></a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">MENU</a>
+                    <ul>
+                        <!-- li*4>a[href=#] -->
+                        <li><a href="#">음료</a></li>
+                        <li><a href="#">푸드</a></li>
+                        <li><a href="#">상품</a></li>
+                        <li><a href="#">카드</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">MENU</a>
+                    <ul>
+                        <li><a href="#">매장찾기</a></li>
+                        <li><a href="#">드라이브 쓰루 매장</a></li>
+                        <li><a href="#">스타벅스 리저브<sup>TM</sup></a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">RESPONSIBILITY</a>
+                    <ul>
+                        <li><a href="#">사회공헌캠페인소개</a></li>
+                        <li><a href="#">지역사회 공헌활동</a></li>
+                    </ul>
+                </li>
+            </ul>
+
+            <!-- util메뉴 -->
+            <ul class="util-nav">
+                <li><a href="#">Sign in</a></li>
+                <li><a href="#">My Starbucks</a></li>
+                <li><a href="#">Customer Service</a></li>
+                <li><a href="#">Find a Store</a></li>
+            </ul>
+        </nav>
+
+        <!-- 멤버십 메뉴 -->
+        <input type="checkbox" id="btn-member">
+        <label for="btn-member" class="btn-member">
+            <span class="blind">멤버십메뉴</span>
+        </label>
+        <!-- 멤버십 콘텐츠 -->
+        <div class="member-nav row">
+            <!-- 회원가입/로그인 -->
+            <div class="col-sm-6">
+                <div class="wrap row">
+                    <div class="col-xs-3 col-sm-3">
+                        <img src="img/login.png" alt="">
+                    </div>
+                    <div class="col-xs-9 col-sm-9">
+                        <div class="box">
+                            <p>
+                                <strong>스타벅스 코리아 회원이 아니세요?</strong>
+                                스타벅스커피 코리아 회원만의 특별한 혜택을 누릴 수 있습니다.
+                            </p>
+                            <div class="btn-group">
+                                <button>로그인</button>
+                                <button>회원가입</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- 스타벅스카드 -->
+            <div class="col-sm-6">
+                <div class="wrap row">
+                    <div class="col-xs-3 col-sm-3">
+                        <img src="img/card.png" alt="">
+                    </div>
+                    <div class="col-xs-9 col-sm-9">
+                        <div class="box">
+                            <p>
+                                <strong>스타벅스 카드를 가지고 계신가요?</strong>
+                                스타벅스를 등록하시면, 마이스타벅스 리워드만의 특별한 혜택을 누릴 수 있습니다.
+                            </p>
+                            <div class="btn-group">
+                                <button>카드등록</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+</body>
+</html>
