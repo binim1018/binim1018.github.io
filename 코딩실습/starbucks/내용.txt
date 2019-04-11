@@ -60,5 +60,85 @@ img/banner1.jpg~img/banner6.jpg
 (주)스타벅스커피 코리아 대표이사 이석구
 TEL : 02) 3015-1100 / FAX : 02) 3015-1106
 개인정보 책임자 : 강기원
+
+
+
+
+<!-- 리저브 커피 -->
+        <article class="reserve">
+            <h2>스타벅스 리저브<sup>TM</sup></h2>
+            <div class="reserve-info">
+                <ul class="row">
+                    <li class="col-xs-6 col-sm-3">
+                        <div class="wrap">
+                            <img src="img/icon_reserve_info1.png" alt="">
+                            <p>clover</p>
+                        </div>
+                    </li>
+                    <li class="col-xs-6 col-sm-3">
+                        <div class="wrap">
+                            <img src="img/icon_reserve_info2.png" alt="">
+                            <p>black eagle</p>
+                        </div>
+                    </li>
+                    <li class="col-xs-6 col-sm-3">
+                        <div class="wrap">
+                            <img src="img/icon_reserve_info3.png" alt="">
+                            <p>siphon</p>
+                        </div>
+                    </li>
+                    <li class="col-xs-6 col-sm-3">
+                        <div class="wrap">
+                            <img src="img/icon_reserve_info4.png" alt="">
+                            <p>poc</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- 리저브매장(뒤집기효과) -->
+            <div class="reserve-store">
+                <div class="rotate">
+                    <img src="img/reserve_medal01.png" alt="reserve" class="front">
+                    <div class="back">
+                        <img src="img/reserve_medal02.png" alt="스타벅스 리저브 매장, 스타벅스 리저브 TM커피 및 관련제품을 판매하는 매장을 확인하려면 매장보기를 눌러주세요.">
+                        <a href="#">매장보기</a>
+                    </div>
+                </div>
+            </div>
+        </article>
+
+<footer>
+        <div class="banner">
+            <div class="wrap">
+                <input type="checkbox" id="btn-banner">
+                <label for="btn-banner" class="fa">
+                    <span class="skip">정지/재생</span>
+                </label>
+                <!-- ul>li*8>img[src=img/banner$.jpg] -->
+                <ul>
+                    <li><img src="img/banner1.jpg" alt=""></li>
+                    <li><img src="img/banner2.jpg" alt=""></li>
+                    <li><img src="img/banner3.jpg" alt=""></li>
+                    <li><img src="img/banner4.jpg" alt=""></li>
+                    <li><img src="img/banner5.jpg" alt=""></li>
+                    <li><img src="img/banner6.jpg" alt=""></li>
+                    <!-- 눈속임용 2개 준비 -->
+                    <li><img src="img/banner1.jpg" alt=""></li>
+                    <li><img src="img/banner2.jpg" alt=""></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- 사이트 정보 -->
+        <ul class="info">
+            <li>사업자등록번호 201-81-21515</li>
+            <li>(주)스타벅스커피 코리아 대표이사 이석구</li>
+            <li>TEL : 02) 3015-1100 / FAX : 02) 3015-1106</li>
+            <li>개인정보 책임자 : 강기원</li>
+        </ul>
+        <small>ⓒ 2015 Starbucks Coffee Company. All Rights Reserved.</small>
+    </footer>
+
     
 ⓒ 2015 Starbucks Coffee Company. All Rights Reserved.

@@ -11,7 +11,7 @@ a{text-decoration: none; display: inline-block; color: black;}
 img{max-width:100%;}
 .blind{font-size: 0; position: absolute; left:-9999px;}
 
-/* header */
+/* header ======================================================================================================= */
 header{position: fixed; width:100%; z-index: 1;}
 /* z-index는 position이 있어야 적용 가능함. */
 header .title{position: relative; height: 70px; background: #007042; z-index: 2;}
@@ -112,7 +112,118 @@ nav{background: #2c2a29;}
 .member-nav>div:nth-child(2) img{padding-top: 30px;}
 
 
-/* 미디어쿼리 */
+/* section ======================================================================================================= */
+/* section */
+/* header가 70px 높이만큼 고정되어 있으므로 section 전체를 header 높이만큼 밀어 준다. */
+section{padding-top: 70px;}
+
+/* 메인광고 */
+.main-ad{position: relative; background: #ebebca;}
+.main-ad .emblem{max-width: 300px; margin: auto; padding: 20px; text-align: center;}
+.main-ad .emblem a{
+    display: inline-block;
+    height: 34px; line-height: 34px;
+    text-align: center;
+    color: #829816; border: 2px solid #829816; border-radius: 3px;
+    padding: 0 10px; margin-top: 20px;
+}
+.main-ad .emblem a:hover{background: #829816; color: white;}
+.main-ad .flavor{max-width: 500px; margin: auto; text-align: center;}
+.main-ad .flavor .flavor1-img{margin-left: -60px;}
+.main-ad .flavor .flavor1-text{padding: 20px;}
+
+/* 제품소개 */
+.product{
+    background: url(../img/main2.jpg) no-repeat center fixed;
+    background-size: cover;
+}
+.product .product-info{padding: 20px 0;}
+.product .product-info a{color: white; padding: 10px; border: 1px solid white; border-radius: 3px;}
+.product .product-info .row>div:nth-child(1){text-align: right;}
+.product .product-info .row>div:nth-child(1)>*{margin-right: 20px;}
+.product .product-info .row>div:nth-child(2){padding: 20px 0;}
+
+.product .product-gallery{background: rgba(255,255,255,0.2); padding: 5px;}
+.product .product-gallery h2{text-align: center; color: white; padding: 20px 0 10px;}
+.product .product-gallery ul li .wrap{
+    /* 이쪽의 overflow:hidden은 a영역(=상품제목박스)을 숨기기 위한 처리 */
+    position: relative; overflow: hidden; margin: 5px;
+}
+.product .product-gallery ul li .wrap img{width: 100%; display: block;}
+.product .product-gallery ul li .wrap a{
+    position: absolute; width: 100%;
+    /* wrap 바깥쪽(밑쪽)에 보내기(숨기기) 위한 수치 => 64px은 a영역의 높이임 */
+    bottom: -64px;
+    background: rgba(0,0,0,0.8);
+    color: white;
+    font-size: 12px;
+    /* 우측 25px은 아이콘의 영역을 잡아 놓은 것임 */
+    padding: 10px 25px 10px 10px;
+    box-sizing: border-box;
+    transition: 0.2s;
+}
+.product .product-gallery ul li .wrap:hover a{bottom: 0;} /* a가 bottom:0이 되면 보여진다. */
+.product .product-gallery ul li .wrap a dl dt,
+.product .product-gallery ul li .wrap a dl dd{
+    /* 글자가 길어질 경우 ...으로 생략 처리하는 효과 : 3set 외우기 */
+    text-overflow: ellipsis; overflow: hidden; white-space: nowrap;
+}
+.product .product-gallery ul li .wrap a i{
+    position: absolute; right: 10px; bottom: 20px; color: white;
+}
+/* 아래 css를 쓰기 싫으면 클래스 규칙을 찾아서 마크업에 넣어주기 => 꼭 css를 통해서 잡아야만 할 때는 토글메뉴 쪽 아이콘 같은 경우 */
+.product .product-gallery ul li .wrap a i::after{content: '\f054';}
+
+/* 리저브커피 */
+.reserve{
+    position: relative;
+    background: url(../img/main3.jpg) no-repeat center fixed;
+    background-size: cover;
+}
+.reserve h2{
+    text-align: center; color: white; padding-top: 20px; font-size: 2em;
+    text-shadow: 0 0 10px white;
+}
+.reserve h2 sup{font-size: 0.5em;}
+.reserve .reserve-info{padding: 20px 0;}
+.reserve .reserve-info ul li{text-align: center;}
+.reserve .reserve-info ul li .wrap{margin: 20px;}
+.reserve .reserve-info ul li .wrap p{color: #fff; text-transform: uppercase;}
+
+/* 뒤집기 */
+.reserve .reserve-store{position: relative; height: 400px;}
+.reserve .reserve-store .rotate{
+    position: absolute; top: 50%; left:50%; transform: translate(-50%,-50%);
+    width: 334px; height: 334px;
+}
+.reserve .reserve-store .rotate img{max-width: initial;}
+.reserve .reserve-store .rotate>*{
+    /* 뒤집어졌을 경우 숨기기 */
+    backface-visibility: hidden;
+    transition: 0.5s;
+    /* rotate영역을 부모로 잡고 가운데 가기 */
+    position: absolute; top:50%; left: 50%; 
+}
+.reserve .reserve-store .rotate .front{transform: translate(-50%,-50%) rotateY(0deg);}
+.reserve .reserve-store .rotate .back{transform: translate(-50%,-50%) rotateY(180deg);}
+.reserve .reserve-store .rotate:hover .front{transform: translate(-50%,-50%) rotateY(180deg);}
+.reserve .reserve-store .rotate:hover .back{transform: translate(-50%,-50%) rotateY(0deg);}
+.reserve .reserve-store .rotate .back a{
+    position: absolute; bottom: 50px; left: 50%; transform: translateX(-50%);
+    border: 1px solid #a26e49; color: #a26e49; padding: 10px 20px;
+    border-radius: 3px; transition: 0.2s;
+}
+.reserve .reserve-store .rotate .back a:hover{background: #a26e49; color: white;}
+
+
+/* footer ==================================================================================================== */
+footer{background: #282828; color:#fff; text-align: center; 
+    padding: 20px 0; font-size: 0.8em;}
+footer .info{padding: 20px 0;}
+#btn-banner{display: none;}
+
+
+/* 미디어쿼리 ================================================================================================= */
 /* 모바일 */
 @media (max-width:767px){
     .btn-menu *, nav, nav *{transition: 0.5s;}
@@ -148,6 +259,29 @@ nav{background: #2c2a29;}
 
     .member-nav>div:nth-child(1) .wrap{border-bottom: 1px solid white;}
     .member-nav .wrap{max-width: 350px; margin: auto;}
+
+    /* footer */
+    footer .banner{position: relative; height: 70px;}
+    footer .banner .wrap{max-width: 400px; margin: auto; overflow: hidden;}
+    footer .banner .wrap label{position: absolute; bottom: 0;}
+    /* 기본 재생상태일 때(일시정지 아이콘 보여주기) */
+    footer .banner .wrap label::after{content: '\f04c';}
+    footer .banner .wrap ul{
+        /* 배너 하나의 넓이 * 배너의 갯수(눈속임용 포함)=총 리스트의 폭 */
+        width: 1512px;
+        animation: banner 10s linear infinite;
+    }
+    footer .banner .wrap ul li{float: left; width: 189px;}
+    #btn-banner:checked+label::after{content: '\f04b';}
+    /* 체크박스가 체크되면 애니메이션 정지 */
+    #btn-banner:checked~ul{animation-play-state: paused;}
+
+    @keyframes banner {
+        0%{margin-left: 0;}
+        /* 배너 1개의 폭 (189px) * 실제로 보여줄 배너의 갯수(6) */
+        100%{margin-left: -1134px;}
+    }
+
 }
 
 /* 태블릿 이상 */
@@ -184,4 +318,26 @@ nav{background: #2c2a29;}
 
     .util-nav{position: absolute; top: 0; right:0; }
     .util-nav li{float: left;}
+
+    /* 멤버십 */
+    .btn-member{top: 45px; color: #007042;}
+    .member-nav>div{box-sizing: border-box;}
+    .member-nav>div:nth-child(1){border-right: 1px solid white;}
+    #btn-member:checked~.member-nav{height: 175px;}
+
+    /* section */
+    section{padding-top: 177px;}
+
+    .main-ad .row{position: relative; width: 700px; margin: auto; height: 400px;}
+    .main-ad .emblem{margin: 0; text-align: left;}
+    .main-ad .flavor{position: absolute; top: -50px; right: 0;}
+    .main-ad .flavor1-text{position: absolute; bottom: 0; right: 250px;}
+
+    /* footer */
+    footer .banner .wrap{max-width: 800px; margin: auto;}
+    footer .banner label{display: none;}
+    footer .banner .wrap ul{overflow: hidden;}
+    footer .banner .wrap ul li{float: left; width: 33.33%;}
+    /* 눈속임용 두 개를 태블릿 이상에서는 숨긴다. */
+    footer .banner .wrap ul li:nth-child(6)~li{display: none;}
 }

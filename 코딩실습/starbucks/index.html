@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
     <link rel="stylesheet" href="css/grid_system.css">
     <link rel="stylesheet" href="css/style.css">
+    <!-- 책 추천 : 모던 웹디자인을 위한 HTML5,CSS3 입문 -->
 </head>
 <body>
     <header>
@@ -52,7 +53,7 @@
                     </ul>
                 </li>
                 <li>
-                    <a href="#">MENU</a>
+                    <a href="#">STORE</a>
                     <ul>
                         <li><a href="#">매장찾기</a></li>
                         <li><a href="#">드라이브 쓰루 매장</a></li>
@@ -63,7 +64,7 @@
                     <a href="#">RESPONSIBILITY</a>
                     <ul>
                         <li><a href="#">사회공헌캠페인소개</a></li>
-                        <li><a href="#">지역사회 공헌활동</a></li>
+                        <li><a href="#">지역사회 참여활동</a></li>
                     </ul>
                 </li>
             </ul>
@@ -125,6 +126,171 @@
             </div>
         </div>
     </header>
+
+    <section>
+        <!-- 신제품 광고 -->
+        <article class="main-ad">
+            <div class="row">
+                <div class="emblem">
+                    <img src="img/emblem.png" alt="show your flavor">
+                    <a href="#">자세히보기</a>
+                </div>
+                <div class="flavor">
+                    <img src="img/bev1_cup.png" alt="" class="flavor1-img">
+                    <img src="img/bev1_txt.png" alt="choux strawberry frappuccino" class="flavor1-text">
+                </div>
+            </div>
+        </article>
+
+        <!-- 제품소개 -->
+        <article class="product">
+            <!-- 제품정보 -->
+            <div class="product-info">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div class="img-box">
+                            <img src="img/fav_prod_txt01.png" alt="pick your favorite">
+                            <img src="img/fav_prod_txt02.png" alt="다양한 메뉴를 스타벅스에서 즐겨 보세요.">
+                        </div>
+                        <a href="#">자세히보기</a>
+                    </div>
+                    <div class="col-sm-6">
+                        <img src="img/fav_prod_img.png" alt="">
+                    </div>
+                </div>
+            </div>
+            <!-- 제품이미지 리스트 -->
+            <div class="product-gallery">
+                <h2>새로나온 제품</h2>
+                <ul class="row">    
+                    <li class="col-xs-6 col-sm-3">
+                        <div class="wrap">
+                            <img src="img/coffee1.jpg" alt="">
+                            <a href="#">
+                                <dl>
+                                    <dt>나이트 콜드 브루</dt>
+                                    <dd>Nitero cold Briew</dd>
+                                </dl>
+                                <i class="fa"><span class="blind">자세히보기</span></i>
+                            </a>
+                        </div>
+                    </li>
+                    <li class="col-xs-6 col-sm-3">
+                        <div class="wrap">
+                            <img src="img/coffee2.jpg" alt="">
+                            <a href="#">
+                                <dl>
+                                    <dt>나이트 콜드 브루</dt>
+                                    <dd>Nitero cold Briew</dd>
+                                </dl>
+                                <i class="fa"><span class="blind">자세히보기</span></i>
+                            </a>
+                        </div>
+                    </li>
+                    <li class="col-xs-6 col-sm-3">
+                        <div class="wrap">
+                            <img src="img/coffee3.jpg" alt="">
+                            <a href="#">
+                                <dl>
+                                    <dt>나이트 콜드 브루</dt>
+                                    <dd>Nitero cold Briew</dd>
+                                </dl>
+                                <i class="fa"><span class="blind">자세히보기</span></i>
+                            </a>
+                        </div>
+                    </li>
+                    <li class="col-xs-6 col-sm-3">
+                        <div class="wrap">
+                            <img src="img/coffee4.jpg" alt="">
+                            <a href="#">
+                                <dl>
+                                    <dt>나이트 콜드 브루</dt>
+                                    <dd>Nitero cold Briew</dd>
+                                </dl>
+                                <i class="fa"><span class="blind">자세히보기</span></i>
+                            </a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </article>
+
+        <!-- 리저브 커피 -->
+        <article class="reserve">
+            <h2>스타벅스 리저브<sup>TM</sup></h2>
+            <div class="reserve-info">
+                <ul class="row">
+                    <li class="col-xs-6 col-sm-3">
+                        <div class="wrap">
+                            <img src="img/icon_reserve_info1.png" alt="">
+                            <p>clover</p>
+                        </div>
+                    </li>
+                    <li class="col-xs-6 col-sm-3">
+                        <div class="wrap">
+                            <img src="img/icon_reserve_info2.png" alt="">
+                            <p>black eagle</p>
+                        </div>
+                    </li>
+                    <li class="col-xs-6 col-sm-3">
+                        <div class="wrap">
+                            <img src="img/icon_reserve_info3.png" alt="">
+                            <p>siphon</p>
+                        </div>
+                    </li>
+                    <li class="col-xs-6 col-sm-3">
+                        <div class="wrap">
+                            <img src="img/icon_reserve_info4.png" alt="">
+                            <p>poc</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- 리저브매장(뒤집기효과) -->
+            <div class="reserve-store">
+                <div class="rotate">
+                    <img src="img/reserve_medal01.png" alt="reserve" class="front">
+                    <div class="back">
+                        <img src="img/reserve_medal02.png" alt="스타벅스 리저브 매장, 스타벅스 리저브 TM커피 및 관련제품을 판매하는 매장을 확인하려면 매장보기를 눌러주세요.">
+                        <a href="#">매장보기</a>
+                    </div>
+                </div>
+            </div>
+        </article>
+    </section>
+
+    <footer>
+        <div class="banner">
+            <div class="wrap">
+                <input type="checkbox" id="btn-banner">
+                <label for="btn-banner" class="fa">
+                    <span class="blind">정지/재생</span>
+                </label>
+                <!-- ul>li*8>img[src=img/banner$.jpg] -->
+                <ul>
+                    <li><img src="img/banner1.jpg" alt=""></li>
+                    <li><img src="img/banner2.jpg" alt=""></li>
+                    <li><img src="img/banner3.jpg" alt=""></li>
+                    <li><img src="img/banner4.jpg" alt=""></li>
+                    <li><img src="img/banner5.jpg" alt=""></li>
+                    <li><img src="img/banner6.jpg" alt=""></li>
+                    <!-- 눈속임용 2개 준비 -->
+                    <li><img src="img/banner1.jpg" alt=""></li>
+                    <li><img src="img/banner2.jpg" alt=""></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- 사이트 정보 -->
+        <ul class="info">
+            <li>사업자등록번호 201-81-21515</li>
+            <li>(주)스타벅스커피 코리아 대표이사 이석구</li>
+            <li>TEL : 02) 3015-1100 / FAX : 02) 3015-1106</li>
+            <li>개인정보 책임자 : 강기원</li>
+        </ul>
+        <small>ⓒ 2015 Starbucks Coffee Company. All Rights Reserved.</small>
+    </footer>
     
 </body>
 </html>
